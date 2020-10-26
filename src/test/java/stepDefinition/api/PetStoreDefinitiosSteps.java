@@ -1,5 +1,6 @@
 package stepDefinition.api;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import model.petstore.Pets;
@@ -32,5 +33,15 @@ public class PetStoreDefinitiosSteps {
         petStoreSteps.searchForAPetAtTheStore(pet.getId());
         Assert.assertEquals(200, lastResponse().statusCode());
         Assert.assertEquals(pet.getName(), lastResponse().jsonPath().getString("name"));
+    }
+
+    @Then("I update the pet in the store")
+    public void iUpdateThePetInTheStore() {
+
+    }
+
+    @After("@api")
+    public void xb(){
+
     }
 }
